@@ -1,67 +1,97 @@
 <mxfile host="65bd71144e">
     <diagram id="9cgwHoDv_7BguVOspAg9" name="Page-1">
-        <mxGraphModel dx="870" dy="807" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="778" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="8" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2" target="4">
+                <mxCell id="8" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="4" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="2" value="Connect to power" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="350" y="40" width="120" height="60" as="geometry"/>
+                <mxCell id="2" value="Connect to power" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="60" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="3" target="17">
+                <mxCell id="18" value="" style="edgeStyle=none;html=1;" parent="1" source="3" target="17" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="activate the relay for stepper motor's power supply" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="340" y="240" width="140" height="60" as="geometry"/>
+                <mxCell id="3" value="activate the relay for stepper motor's power supply" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="260" width="140" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="4" target="3">
+                <mxCell id="11" value="" style="edgeStyle=none;html=1;" parent="1" source="4" target="3" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="4" target="12">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="4" value="check_time" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="350" y="130" width="120" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="14" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="12" target="4">
+                <mxCell id="13" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="4" target="22" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="610" y="130" as="sourcePoint"/>
+                        <mxPoint x="370" y="185" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="check_time" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="150" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="12" target="4">
+                    <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="570" y="20"/>
-                            <mxPoint x="280" y="20"/>
-                            <mxPoint x="280" y="165"/>
+                            <mxPoint x="440" y="40"/>
+                            <mxPoint x="120" y="40"/>
+                            <mxPoint x="120" y="185"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="12" value="sleep(10)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="530" y="135" width="80" height="60" as="geometry"/>
+                <mxCell id="12" value="sleep(1)" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="60" width="80" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="True" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="410" y="210" width="40" height="20" as="geometry"/>
+                <mxCell id="15" value="True" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="230" width="40" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="False" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="480" y="140" width="40" height="20" as="geometry"/>
+                <mxCell id="16" value="False" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="160" width="40" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="20" target="4">
+                <mxCell id="19" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="20" target="4" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="400" y="570" as="sourcePoint"/>
+                        <mxPoint x="240" y="590" as="sourcePoint"/>
                         <Array as="points">
-                            <mxPoint x="410" y="530"/>
-                            <mxPoint x="280" y="530"/>
-                            <mxPoint x="280" y="165"/>
+                            <mxPoint x="250" y="550"/>
+                            <mxPoint x="120" y="550"/>
+                            <mxPoint x="120" y="185"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="21" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="17" target="20">
+                <mxCell id="21" value="" style="edgeStyle=none;html=1;" parent="1" source="17" target="20" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="stepper.push_food()" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="340" y="340" width="140" height="60" as="geometry"/>
+                <mxCell id="17" value="stepper.push_food()" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="360" width="140" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" value="deactivate the relay to cut the motor's power supply" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="340" y="440" width="140" height="60" as="geometry"/>
+                <mxCell id="20" value="deactivate the relay to cut the motor's power supply" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="460" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="22" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="22" target="27">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Enter the &lt;br&gt;edit mode?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="150" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="27" target="12">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="540" y="290"/>
+                            <mxPoint x="540" y="90"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="Edit the amount of food" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="260" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="True" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="230" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="False" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="130" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="Pressing both&lt;br&gt;buttond to exit" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="170" width="90" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

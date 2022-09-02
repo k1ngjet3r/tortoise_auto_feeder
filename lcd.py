@@ -22,6 +22,14 @@ def lcd_feeding(feeding_datail):
     lcd.putstr(f'Amount: {feeding_datail}')
 
 
+def lcd_food_amount_edit_mode(food_amount):
+    lcd.backlight_on()
+    lcd.move_to(0, 0)
+    lcd.putstr('Edit Mode:')
+    lcd.move_to(0, 1)
+    lcd.putstr(f'{food_amount}')
+
+
 if __name__ == '__main__':
     lcd_show_time('12:12', '22:22/12')
     time.sleep(1)
