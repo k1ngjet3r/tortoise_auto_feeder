@@ -1,19 +1,41 @@
 import time
-from clock import get_time
-from step_motor import Stepper_motor
-from lcd import lcd_show_time, lcd_feeding, lcd, lcd_food_amount_edit_mode
-from relay import Relay
 from machine import Pin
+from modules.clock import Clock
+from modules.step_motor import Stepper_motor
+from modules.lcd import LCD
+from modules.relay import Relay
 
 FoodAmount = 10
 
-button_increase = Pin(14, Pin.IN, Pin.PULL_DOWN)
-button_decrease = Pin(15, Pin.IN, Pin.PULL_DOWN)
+
+# Pin Setup
+clock_sda = 0
+clock_scl = 1
+
+lcd_sda = 2
+lcd_scl = 3
+
+relay_pin = 5
+
+button_increase_pin = 14
+button_decrease_pin = 15
+
+stepper_motor_dir = 16
+stepper_motor_step = 17
+
+
+# Init modules
+clock = Clock(scl=clock_scl, sda=clock_sda)
+lcd = LCD(scl=lcd_scl, sda=lcd_sda)
+relay = Relay(pin=relay_pin)
+button_increase = Pin(button_increase_pin, Pin.IN, Pin.PULL_DOWN)
+button_decrease = Pin(button_decrease_pin, Pin.IN, Pin.PULL_DOWN)
+stepper_motor = Stepper_motor(step_pin=stepper_motor_step, dir_pin=stepper_motor_dir)
 
 
 def feeder(hour, minute):
     while True:
-        current_time = get_time()
+        current_time = Clock.get_time()
         feeding_datail = f'{hour}:{minute}/{FoodAmount}'
 
         now_hour, now_minute, now_second = time_format_correction(current_time[4], current_time[5], current_time[6])
@@ -24,32 +46,32 @@ def feeder(hour, minute):
         if current_time[4] == hour and current_time[5] == minute:
             # Turning on the relay for stepper motor
             Relay().on()
-            lcd.clear()
-            lcd.backlight_on()
+            LCD.clear()
+            LCD.backlight_on()
             time.sleep(2)
 
             # pushing the food
             for i in range(FoodAmount):
-                lcd_feeding(f'{i+1}/{FoodAmount}')
+                LCD.lcd_feeding(f'{i+1}/{FoodAmount}')
                 Stepper_motor().push_food(1)
-            lcd_feeding('Done!')
+            LCD.lcd_feeding('Done!')
             time.sleep(2)
             Relay().off()
             time.sleep(60)
         else:
             if button_increase.value() and button_decrease.value():
-                lcd.clear()
+                LCD.clear()
                 food_amout_edit_mode()
 
-            lcd.backlight_off()
-            lcd_show_time(now, feeding_datail)
+            LCD.backlight_off()
+            LCD.lcd_show_time(now, feeding_datail)
             time.sleep(1)
 
 
 def food_amout_edit_mode():
     global FoodAmount
     while True:
-        lcd_food_amount_edit_mode(FoodAmount)
+        LCD.lcd_food_amount_edit_mode(FoodAmount)
 
         if button_increase.value() and button_decrease.value():
             time.sleep(3)

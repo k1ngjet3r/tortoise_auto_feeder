@@ -1,7 +1,5 @@
 from machine import Pin
 import time
-from time import sleep_ms
-from time import sleep_us
 
 
 def map(x, in_min, in_max, out_min, out_max): 
