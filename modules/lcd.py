@@ -4,7 +4,7 @@ from modules.pico_i2c_lcd import I2cLcd
 
 
 class LCD:
-    def __init__(self, id=1, scl=3, sda=2, freq=100000):
+    def __init__(self, id=0, scl=1, sda=0, freq=100000):
         i2c_lcd = I2C(id=id, scl=Pin(scl), sda=Pin(sda), freq=100000)
         I2C_ADDR = i2c_lcd.scan()[0]
         self.lcd = I2cLcd(i2c_lcd, I2C_ADDR, 2, 16)
@@ -43,6 +43,6 @@ class LCD:
         self.lcd.backlight_off()
 
 if __name__ == '__main__':
-    LED.lcd_show_time('12:12', '22:22/12')
+    LCD().show_time('12:12', '22:22/12')
     time.sleep(1)
-    LED.lcd_feeding('test')
+    LCD().feeding('test')

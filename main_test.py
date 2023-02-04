@@ -7,17 +7,17 @@ from modules.relay import Relay
 
 
 # Init the food amount
-FoodAmount = 10
+FoodAmount = 20 
 
 
 # Pin Setup
-clock_sda = 2
-clock_scl = 3
+clock_sda = 6
+clock_scl = 7
 
 lcd_sda = 0
 lcd_scl = 1
 
-relay_pin = 5
+relay_pin = 13
 
 button_increase_pin = 14
 button_decrease_pin = 15
@@ -27,8 +27,8 @@ stepper_motor_step = 17
 
 
 # Init modules
-clock = Clock(scl=clock_scl, sda=clock_sda)
-lcd = LCD(scl=lcd_scl, sda=lcd_sda)
+clock = Clock(id=1, scl=clock_scl, sda=clock_sda)
+lcd = LCD(id=0, scl=lcd_scl, sda=lcd_sda)
 relay = Relay(pin=relay_pin)
 button_increase = Pin(button_increase_pin, Pin.IN, Pin.PULL_DOWN)
 button_decrease = Pin(button_decrease_pin, Pin.IN, Pin.PULL_DOWN)
@@ -51,7 +51,7 @@ class Feeder:
             now = f'{now_hour}:{now_minute}:{now_second}'
 
             if now_hour == self.hour and now_minute == self.minute:
-                relay.on()
+                relay.off()
                 lcd.clear()
                 lcd.backlight_on()
                 time.sleep(2)
@@ -62,7 +62,7 @@ class Feeder:
                     stepper_motor.push_food(1)
                 lcd.feeding('Done')
                 time.sleep(2)
-                relay.off()
+                relay.on()
                 time.sleep(60)
             else:
                 if button_increase.value() and button_decrease.value():
@@ -71,7 +71,7 @@ class Feeder:
                 
                 lcd.backlight_off()
                 lcd.show_time(now, feeding_datail)
-                time.sleep(1)
+                time.sleep(0.5)
 
 
     def _food_amount_edit_mode(self):
@@ -102,4 +102,5 @@ def time_format_correction(hour, minute, sec):
 
 
 if __name__ == '__main__':
-    Feeder(hour=13, minute=57).feeding()
+    # clock.time_reset(2022, 9, 11, 6, 21, 6, 0)
+    Feeder(hour=21, minute=19).feeding()
